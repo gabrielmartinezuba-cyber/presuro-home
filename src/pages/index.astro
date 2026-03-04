@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Hero } from '../components/sections/Hero';
+import { Features } from '../components/sections/Features';
+import { Services } from '../components/sections/Services';
+import { Timeline } from '../components/sections/Timeline';
+import { FAQ } from '../components/sections/FAQ';
+import { ContactForm } from '../components/form/ContactForm';
+---
+
+<Layout title="PresuroHome | Holter y Presurometría a Domicilio">
+	<main>
+		<Hero client:load />
+		<Features client:visible />
+		<Services client:visible />
+		<Timeline client:visible />
+		<FAQ client:visible />
+		<ContactForm client:visible />
+	</main>
+</Layout>

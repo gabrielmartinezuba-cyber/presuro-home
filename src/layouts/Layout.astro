@@ -1,0 +1,52 @@
+---
+import '../styles/global.css';
+import Navbar from '../components/layout/Navbar.astro';
+import { InitialLoader } from '../components/ui/InitialLoader';
+import { FloatingWhatsApp } from '../components/layout/FloatingWhatsApp';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Servicio de diagnóstico cardiológico a domicilio. Holter y Presurometría en CABA y GBA Oeste.' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- Meta-tags específicos SEO -->
+    <meta name="keywords" content="Holter a domicilio, Presurometría en casa, Cardiología, CABA, GBA Oeste" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    
+    <!-- PLACEHOLDER PIXEL GOOGLE ADS -->
+    <!-- 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-XXXXXXXXXX');
+    </script> 
+    -->
+    
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="relative min-h-screen flex flex-col overflow-x-hidden selection:bg-brand-red/20 selection:text-brand-red bg-surface-light">
+    <InitialLoader client:load />
+    <Navbar />
+    <FloatingWhatsApp client:load />
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-red: #8A1515;
+  --color-brand-red-hover: #701010;
+  
+  --font-display: "Outfit", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+  --shadow-premium: 0 10px 40px -10px rgba(0,0,0,0.08);
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-white/60 backdrop-blur-[12px] border border-white/20 shadow-premium;
+  }
+}
+
+html, body {
+  @apply bg-slate-50 text-slate-900 scroll-smooth antialiased font-body;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-display tracking-tight;
+}
