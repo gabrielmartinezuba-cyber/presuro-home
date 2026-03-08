@@ -40,9 +40,11 @@ export const InitialLoader = () => {
                                 transition={{ repeat: Infinity, duration: 1.2, ease: "easeOut" }}
                                 className="absolute inset-0 bg-brand-red rounded-full blur-[30px]"
                             />
-                            <div className="relative text-5xl font-display font-bold text-slate-900 tracking-tight">
-                                Presuro<span className="text-brand-red">Home</span>
-                            </div>
+                            <img 
+                                src="/logo.png" 
+                                alt="PresuroHome Logo" 
+                                className="relative w-48 md:w-64 h-auto object-contain drop-shadow-md"
+                            />
                         </div>
 
                         <div className="w-48 h-1 bg-slate-200 rounded-full overflow-hidden">

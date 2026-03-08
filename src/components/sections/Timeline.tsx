@@ -57,7 +57,7 @@ export const Timeline = () => {
 
                 <div ref={containerRef} className="relative">
                     {/* Static Background Line */}
-                    <div className="absolute left-[39px] sm:left-1/2 top-0 bottom-0 w-0.5 bg-slate-100 sm:-translate-x-1/2 rounded-full overflow-hidden">
+                    <div className="absolute left-[39px] md:left-1/2 top-0 bottom-0 w-0.5 bg-slate-100 md:-translate-x-1/2 rounded-full overflow-hidden">
                         {/* Animated Fill Line */}
                         <motion.div
                             className="absolute top-0 w-full bg-brand-red origin-top"
@@ -71,17 +71,17 @@ export const Timeline = () => {
                             const isEven = index % 2 === 0;
 
                             return (
-                                <div key={step.id} className="relative flex items-center justify-between flex-col sm:flex-row w-full group">
+                                <div key={step.id} className="relative flex items-center justify-between flex-row w-full group">
 
-                                    {/* Left Side Content (Empty if odd) */}
-                                    <div className={`w-full sm:w-5/12 ml-[80px] sm:ml-0 flex ${isEven ? 'sm:justify-end' : 'sm:justify-start order-1 sm:order-2'}`}>
+                                    {/* Left Side Content (Desktop Even, Mobile Even) */}
+                                    <div className={`w-full md:w-5/12 pl-[80px] md:pl-0 flex ${isEven ? 'justify-start md:justify-end' : 'hidden md:flex order-1 md:order-2'}`}>
                                         {isEven && (
                                             <motion.div
                                                 initial={{ opacity: 0, x: -30 }}
                                                 whileInView={{ opacity: 1, x: 0 }}
                                                 viewport={{ once: true, margin: "-10%" }}
                                                 transition={{ duration: 0.5 }}
-                                                className="text-left sm:text-right pr-0 sm:pr-8"
+                                                className="text-left md:text-right pr-0 md:pr-8"
                                             >
                                                 <h3 className="text-2xl font-display font-semibold text-slate-900 mb-2">{step.title}</h3>
                                                 <p className="text-slate-600">{step.description}</p>
@@ -89,31 +89,30 @@ export const Timeline = () => {
                                         )}
                                     </div>
 
-                                    {/* Center Node: Must "Pop" precisely when scrolled into view */}
-                                    <div className="absolute left-0 sm:left-1/2 flex items-center justify-center w-[80px] h-[80px] -translate-x-0 sm:-translate-x-1/2 z-10">
+                                    {/* Center Node */}
+                                    <div className="absolute left-0 md:left-1/2 flex items-center justify-center w-[80px] h-[80px] -translate-x-0 md:-translate-x-1/2 z-10 flex-shrink-0">
                                         <motion.div
                                             initial={{ scale: 0, opacity: 0 }}
                                             whileInView={{ scale: 1, opacity: 1 }}
-                                            viewport={{ once: true, margin: "-45%" }} // Pops exactly when the scrolling line reaches it
+                                            viewport={{ once: true, margin: "-45%" }}
                                             transition={{ type: "spring", stiffness: 300, damping: 20 }}
                                             className="w-14 h-14 rounded-full bg-white border-2 border-slate-200 group-hover:border-brand-red shadow-sm flex items-center justify-center transition-colors duration-300 relative"
                                         >
-                                            {/* Inner dot / icon */}
                                             <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-brand-red">
                                                 <Icon className="w-5 h-5" />
                                             </div>
                                         </motion.div>
                                     </div>
 
-                                    {/* Right Side Content (Empty if even) */}
-                                    <div className={`w-full sm:w-5/12 ml-[80px] sm:ml-0 flex ${!isEven ? 'sm:justify-start' : 'sm:hidden sm:group-even:flex'}`}>
+                                    {/* Right Side Content (Desktop Odd, Mobile Odd) */}
+                                    <div className={`w-full md:w-5/12 pl-[80px] md:pl-0 flex ${!isEven ? 'justify-start' : 'hidden md:flex'}`}>
                                         {!isEven && (
                                             <motion.div
                                                 initial={{ opacity: 0, x: 30 }}
                                                 whileInView={{ opacity: 1, x: 0 }}
                                                 viewport={{ once: true, margin: "-10%" }}
                                                 transition={{ duration: 0.5 }}
-                                                className="text-left pl-0 sm:pl-8"
+                                                className="text-left pl-0 md:pl-8"
                                             >
                                                 <h3 className="text-2xl font-display font-semibold text-slate-900 mb-2">{step.title}</h3>
                                                 <p className="text-slate-600">{step.description}</p>
