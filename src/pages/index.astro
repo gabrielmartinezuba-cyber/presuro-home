@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import { Hero } from '../components/sections/Hero';
 import { Features } from '../components/sections/Features';
 import { Services } from '../components/sections/Services';
+import Coverage from '../components/sections/Coverage.astro';
 import { Timeline } from '../components/sections/Timeline';
 import Team from '../components/sections/Team.astro';
 import { FAQ } from '../components/sections/FAQ';
@@ -14,6 +15,7 @@ import { ContactForm } from '../components/form/ContactForm';
 		<Hero client:load />
 		<Features client:visible />
 		<Services client:visible />
+		<Coverage />
 		<Timeline client:visible />
 		<Team />
 		<FAQ client:visible />

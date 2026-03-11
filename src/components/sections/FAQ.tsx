@@ -6,21 +6,26 @@ import { cn } from '@/utils/cn';
 const FAQ_DATA = [
     {
         id: 1,
+        question: '¿Necesito orden médica para solicitar el estudio?',
+        answer: 'Sí. Es necesaria una orden médica para realizar cualquier estudio. Podés enviárnosla por foto o PDF directamente por WhatsApp antes de coordinar el turno. Aceptamos órdenes de cualquier médico o especialista, sin importar la obra social.'
+    },
+    {
+        id: 2,
         question: '¿Tengo que prepararme de forma especial para los estudios?',
         answer: 'Para el Holter, sugerimos tomar una ducha previa ya que no podrás mojarte durante las 24hs que dura el estudio. Para ambos estudios (Holter y MAPA), te recomendamos usar ropa holgada y cómoda.'
     },
     {
-        id: 2,
+        id: 3,
         question: '¿El servicio incluye el informe médico?',
         answer: 'Sí. Todos nuestros estudios incluyen un informe detallado firmado por médicos cardiólogos habilitados, el cual enviaremos en formato PDF a tu WhatsApp o correo electrónico.'
     },
     {
-        id: 3,
+        id: 4,
         question: '¿Los equipos dificultan el sueño?',
         answer: 'Utilizamos tecnología de última generación diseñada para ser ultra compacta y liviana. Están pensados específicamente para interferir lo menos posible con tu descanso y tu rutina diaria.'
     },
     {
-        id: 4,
+        id: 5,
         question: '¿Qué formas de pago aceptan?',
         answer: 'Podés abonar mediante transferencia bancaria, Mercado Pago o en efectivo al momento de la colocación del equipo en tu domicilio.'
     }
