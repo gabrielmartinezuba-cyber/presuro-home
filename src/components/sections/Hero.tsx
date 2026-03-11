@@ -3,6 +3,45 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Phone, Activity } from 'lucide-react';
 import { MagneticButton } from '../ui/MagneticButton';
 
+const LiveEKG = () => {
+    return (
+        <div className="absolute inset-0 w-full h-full opacity-20 pointer-events-none flex items-center overflow-hidden">
+            <motion.svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 1000 300"
+                preserveAspectRatio="none"
+                className="w-[200%] h-[300px] min-w-[1400px]" // Extra width to allow flow
+            >
+                <defs>
+                    <linearGradient id="ekg-fade" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="#8A1515" stopOpacity="0" />
+                        <stop offset="20%" stopColor="#8A1515" stopOpacity="0.2" />
+                        <stop offset="80%" stopColor="#8A1515" stopOpacity="1" />
+                        <stop offset="100%" stopColor="#8A1515" stopOpacity="1" />
+                    </linearGradient>
+                </defs>
+                <motion.path
+                    d="M-500 150 L0 150 L100 150 L115 135 L130 150 L150 150 L160 170 L180 30 L200 270 L210 150 L240 150 L270 110 L300 150 L400 150 L415 135 L430 150 L450 150 L460 170 L480 60 L500 240 L510 150 L540 150 L570 115 L600 150 L750 150 L765 135 L780 150 L800 150 L810 170 L830 20 L850 280 L860 150 L890 150 L920 105 L950 150 L1000 150 L1100 150 L1115 135 L1130 150 L1150 150 L1160 170 L1180 30 L1200 270 L1210 150 L1240 150 L1270 110 L1300 150 L1400 150 L1500 150"
+                    fill="none"
+                    stroke="url(#ekg-fade)"
+                    strokeWidth="3"
+                    strokeLinejoin="round"
+                    strokeLinecap="round"
+                    initial={{ pathLength: 0, x: 0 }}
+                    animate={{ 
+                        pathLength: [0, 1],
+                        x: [0, -400] // Physically move it leftwards while drawing to fake infinite scroll
+                    }}
+                    transition={{
+                        pathLength: { duration: 4, ease: "linear", repeat: Infinity },
+                        x: { duration: 4, ease: "linear", repeat: Infinity }
+                    }}
+                />
+            </motion.svg>
+        </div>
+    );
+};
+
 export const Hero = () => {
     const { scrollY } = useScroll();
     const y1 = useTransform(scrollY, [0, 1000], [0, 250]);
@@ -24,6 +63,9 @@ export const Hero = () => {
 
                 {/* Grid pattern overlay for technical feel */}
                 <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+CgkJPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMSIgZmlsbD0icmdiYSgxNSwgMjMsIDQyLCAwLjA1KSIvPgoJPC9zdmc+')] [mask-image:linear-gradient(to_bottom,white,transparent)]"></div>
+
+                {/* Dramatic ECG Background Layer (Live Tracing) */}
+                <LiveEKG />
             </div>
 
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
