@@ -70,11 +70,18 @@ export const ServiceCard = ({ title, description, duration, icon, delay = 0 }: S
                 ref={ref}
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
-                style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+                whileTap={{ scale: 0.98 }} // Haptic-like feedback on touch
+                style={{ 
+                    // Use a slightly different approach for tilt on mobile (keep it subtle or off)
+                    // Framer motion transforms apply to the element's style
+                    rotateX: typeof window !== 'undefined' && window.innerWidth >= 768 ? rotateX : 0, 
+                    rotateY: typeof window !== 'undefined' && window.innerWidth >= 768 ? rotateY : 0, 
+                    transformStyle: "preserve-3d" 
+                }}
                 className={cn(
-                    "relative w-full p-8 rounded-3xl cursor-pointer group",
+                    "relative w-full p-8 rounded-3xl cursor-pointer group active:bg-slate-50/50",
                     "bg-white/40 backdrop-blur-xl shadow-premium border border-white/60",
-                    "hover:border-slate-300 transition-colors duration-500"
+                    "md:hover:border-slate-300 transition-all duration-300"
                 )}
             >
                 {/* Dynamic Highlight following cursor */}

@@ -1,0 +1,65 @@
+---
+const TEAM_DATA = [
+    {
+        name: "Dr. Sebastián Rossi",
+        role: "Coordinador General",
+        image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=800&auto=format&fit=crop",
+        link: "#",
+    },
+    {
+        name: "Dra. Martina Gomez",
+        role: "Especialista en Diagnóstico (M.P. 12345)",
+        image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=800&auto=format&fit=crop",
+        link: "#",
+    },
+    {
+        name: "Tec. Leandro Paz",
+        role: "Jefe de Técnicos a Domicilio",
+        image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=800&auto=format&fit=crop",
+        link: "#",
+    }
+];
+---
+
+<section id="equipo" class="py-24 sm:py-32 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16 px-4">
+            <h2 class="text-sm font-semibold tracking-wide text-brand-red uppercase mb-3">Nuestro Equipo</h2>
+            <h3 class="text-4xl md:text-5xl font-display font-bold text-slate-900 tracking-tight lg:leading-tight">
+                El equipo humano <br class="hidden sm:block" />
+                <span class="text-slate-400">detrás de tu tranquilidad.</span>
+            </h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {TEAM_DATA.map((member) => (
+                <div class="p-8 rounded-[2rem] bg-white border border-slate-100 shadow-premium flex flex-col items-center text-center group md:hover:border-slate-300 active:scale-[0.98] active:bg-slate-50 transition-all duration-500 md:hover:-translate-y-1">
+                    <div class="relative mb-8 pt-4">
+                        {/* Soft glow behind profile pic: Always visible (tenuous) on mobile, bright on md:hover */}
+                        <div class="absolute inset-0 bg-brand-red/5 blur-[25px] rounded-full scale-125 opacity-40 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500"></div>
+                        
+                        <div class="relative w-32 h-32 rounded-full overflow-hidden border-2 border-white shadow-sm ring-4 ring-slate-50">
+                            <img 
+                                src={member.image} 
+                                alt={member.name} 
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            />
+                        </div>
+                    </div>
+                    
+                    <h4 class="text-2xl font-display font-bold text-slate-900 mb-1 tracking-tight">{member.name}</h4>
+                    <p class="text-slate-500 font-body text-sm mb-8 leading-relaxed px-4">{member.role}</p>
+                    
+                    <a 
+                        href={member.link} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        class="inline-flex items-center justify-center px-8 py-3 text-sm font-medium text-slate-600 border border-slate-200 rounded-full hover:bg-slate-50 hover:text-brand-red hover:border-brand-red transition-all duration-300"
+                    >
+                        Ver Trayectoria
+                    </a>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>

@@ -49,14 +49,15 @@ export const Features = () => {
                                 key={feature.id}
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
+                                whileTap={{ scale: 0.98 }}
                                 viewport={{ once: true, margin: "-50px" }}
                                 transition={{ duration: 0.5, delay: index * 0.15 }}
                                 className={cn(
                                     "p-8 rounded-3xl group bg-white border border-slate-100 shadow-sm",
-                                    "hover:shadow-premium hover:border-slate-200 transition-all duration-300"
+                                    "md:hover:shadow-premium md:hover:border-slate-200 active:bg-slate-50 transition-all duration-300"
                                 )}
                             >
-                                <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center mb-6 md:group-hover:scale-110 transition-transform duration-300">
                                     <Icon className="w-6 h-6 text-brand-red" strokeWidth={1.5} />
                                 </div>
                                 <h3 className="text-xl font-display font-semibold text-slate-900 mb-3">
