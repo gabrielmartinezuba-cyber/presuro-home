@@ -121,10 +121,10 @@ export const ContactForm = () => {
                         className="max-w-xl"
                     >
                         <div className="mb-8">
-                            <img 
-                                src="/logo.png" 
-                                alt="PresuroHome Logo" 
-                                className="w-48 md:w-64 h-auto object-contain drop-shadow-sm brightness-200 contrast-100" 
+                            <img
+                                src="/logo.png"
+                                alt="PresuroHome Logo"
+                                className="w-48 md:w-64 h-auto object-contain drop-shadow-sm brightness-200 contrast-100"
                             />
                         </div>
                         <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight mb-6 text-white">
