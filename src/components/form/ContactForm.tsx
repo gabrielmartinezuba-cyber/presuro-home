@@ -67,13 +67,39 @@ export const ContactForm = () => {
         setStatus('loading');
 
         try {
-            // Simulate API Call
-            await new Promise(resolve => setTimeout(resolve, 2000));
-            setStatus('success');
-            setFormData({ name: '', phone: '', email: '', message: '' });
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                },
+                body: JSON.stringify({
+                    access_key: "163d78e5-8897-4fb3-819e-cee1e2d802f1",
+                    name: formData.name,
+                    phone: formData.phone,
+                    email: formData.email,
+                    message: formData.message,
+                    from_name: "PresuroHome Contact Form",
+                    subject: `Nuevo contacto de: ${formData.name}`,
+                }),
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                setStatus('success');
+                setFormData({ name: '', phone: '', email: '', message: '' });
+                // Reset success status after some time if needed, 
+                // but the current UI shows a success state overlay.
+            } else {
+                console.error("Error from Web3Forms:", result);
+                setStatus('error');
+                setErrors({ submit: result.message || 'Ocurrió un error al enviar el mensaje. Por favor, intentá nuevamente.' });
+            }
         } catch (error) {
+            console.error("Submission error:", error);
             setStatus('error');
-            setErrors({ submit: 'Ocurrió un error al enviar el mensaje. Por favor, intentá nuevamente.' });
+            setErrors({ submit: 'Ocurrió un error de red. Por favor, verificá tu conexión e intentá nuevamente.' });
         }
     };
 
