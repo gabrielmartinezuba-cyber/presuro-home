@@ -115,7 +115,7 @@ export const ContactForm = () => {
                                 </div>
                                 <div>
                                     <p className="font-semibold text-white">Email Directo</p>
-                                    <p className="text-slate-400">turnos@presurohome.com.ar</p>
+                                    <p className="text-slate-400">presurohome@gmail.com</p>
                                 </div>
                             </div>
                         </div>

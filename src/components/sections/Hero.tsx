@@ -111,7 +111,7 @@ export const Hero = () => {
                 >
                     <MagneticButton>
                         <a
-                            href="https://wa.me/1234567890"
+                            href="https://wa.me/5491151607029"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="group relative flex items-center justify-center gap-2 bg-slate-900 text-white px-8 py-4 rounded-full font-medium shadow-premium hover:shadow-lg transition-all overflow-hidden w-full sm:w-auto"
