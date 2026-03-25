@@ -20,7 +20,7 @@ const SERVICES_DATA = [
     {
         id: 3,
         title: 'Estudio Combinado',
-        description: 'Realice ambos estudios en simultáneo. Optimizamos su tiempo brindando un panorama cardiológico integral en una sola visita a su domicilio.',
+        description: 'Realice ambos estudios en simultáneo. Optimizamos su tiempo brindando un panorama cardiológico especializado en una sola visita a su domicilio.',
         duration: 'Doble Diagnóstico',
         icon: 'combinado' as const,
     }
@@ -45,7 +45,7 @@ export const Services = () => {
                 >
                     <h2 className="text-sm font-semibold tracking-wide text-brand-red uppercase mb-3">Nuestros Estudios</h2>
                     <h3 className="text-4xl md:text-5xl font-display font-bold text-slate-900 tracking-tight mb-6">
-                        Diagnóstico clínico integral.
+                        Diagnóstico cardiológico especializado.
                     </h3>
                     <p className="text-lg text-slate-600">
                         Equipamiento de precisión y tecnología compacta para garantizar la exactitud de los datos sin comprometer tu comodidad.
