@@ -5,7 +5,7 @@ import { Activity, HeartPulse, Stethoscope } from 'lucide-react';
 
 interface ServiceCardProps {
     title: string;
-    description: string;
+    description: string | React.ReactNode;
     duration: string;
     icon: 'holter' | 'mapa' | 'combinado';
     delay?: number;

@@ -20,8 +20,17 @@ const SERVICES_DATA = [
     {
         id: 3,
         title: 'Estudio Combinado',
-        description: 'Realice ambos estudios en simultáneo. Optimizamos su tiempo brindando un panorama cardiológico especializado en una sola visita a su domicilio.',
-        duration: 'Doble Diagnóstico',
+        description: (
+            <>
+                En caso de ser combinado, el procedimiento es secuencial para garantizar tu comodidad:
+                <div className="mt-3 space-y-1">
+                    <div className="flex items-center gap-2"><span>📍</span> <span><strong>Día 1 - Colocación:</strong> Instalamos el primer equipo.</span></div>
+                    <div className="flex items-center gap-2"><span>📍</span> <span><strong>Día 2 - Cambio:</strong> Retiramos el primero y colocamos el segundo dispositivo.</span></div>
+                    <div className="flex items-center gap-2"><span>📍</span> <span><strong>Día 3 - Retiro final:</strong> Se retira el último equipo para descargar todos los datos.</span></div>
+                </div>
+            </>
+        ),
+        duration: 'Procedimiento 72hs',
         icon: 'combinado' as const,
     }
 ];
