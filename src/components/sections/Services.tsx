@@ -23,10 +23,10 @@ const SERVICES_DATA = [
         description: (
             <>
                 En caso de ser combinado, el procedimiento es secuencial para garantizar tu comodidad:
-                <div className="mt-3 space-y-1">
-                    <div className="flex items-center gap-2"><span>📍</span> <span><strong>Día 1 - Colocación:</strong> Instalamos el primer equipo.</span></div>
-                    <div className="flex items-center gap-2"><span>📍</span> <span><strong>Día 2 - Cambio:</strong> Retiramos el primero y colocamos el segundo dispositivo.</span></div>
-                    <div className="flex items-center gap-2"><span>📍</span> <span><strong>Día 3 - Retiro final:</strong> Se retira el último equipo para descargar todos los datos.</span></div>
+                <div className="mt-3 space-y-2">
+                    <div className="flex flex-col"><span><strong>Día 1 - Colocación:</strong> Instalamos el primer equipo.</span></div>
+                    <div className="flex flex-col"><span><strong>Día 2 - Cambio:</strong> Retiramos el primero y colocamos el segundo dispositivo.</span></div>
+                    <div className="flex flex-col"><span><strong>Día 3 - Retiro final:</strong> Se retira el último equipo para descargar todos los datos.</span></div>
                 </div>
             </>
         ),
